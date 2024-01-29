@@ -8,17 +8,17 @@ let currentRound = 1
 function playRound (playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {roundWinner = "tie"}
 
-    if (playerSelection === "Charmander" && computerSelection === "Bulbasaur") || 
-    (playerSelection === "Bulbasaur" && computerSelection === "Squirtle") ||
-    (playerSelection === "Squirtle" && computerSelection === "Charmander") {
+    if ((playerSelection === "Charmander" && computerSelection === "Bulbasaur") ||
+     (playerSelection === "Bulbasaur" && computerSelection === "Squirtle") || 
+     (playerSelection === "Squirtle" && computerSelection === "Charmander")) {
         playerScore++
         roundWinner = "player"
         currentRound++
     } 
     
- if (computerSelection === "Charmander" && playerSelection === "Bulbasaur") ||
+ if ((computerSelection === "Charmander" && playerSelection === "Bulbasaur") ||
  (computerSelection === "Bulbasaur" && playerSelection === "Squirtle") ||
- (computerSelection === "Squirtle" && playerSelection === "Charmander") {
+ (computerSelection === "Squirtle" && playerSelection === "Charmander")) {
        computerScore++
        roundWinner = "computer"
        currentRound++
