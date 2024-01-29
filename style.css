@@ -1,0 +1,53 @@
+body {
+    text-align: center;
+    background-color: #003366;
+    color: white;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    background-color:#003366;
+    flex-shrink: 1;
+}
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #003366;
+    color: white;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+#charmanderBtn, #bulbasaurBtn, #squirtleBtn {
+    background-color: deepskyblue;
+    width: 250px;
+    height: 250px;
+    border: solid 5px;
+    border-radius: 125px;
+    
+}
+img { width: 150px;
+      height: auto;
+}
+.infos {
+    color: white
+}
+
+#scoreDisplay {
+    display: flex;
+    gap: 400px;
+    justify-content: center;
+    color: white;
+}
+
+#Round {
+    display: flex
+    margin-top 100px;
+}
