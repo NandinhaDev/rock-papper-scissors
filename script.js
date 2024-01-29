@@ -22,7 +22,6 @@ function playRound (playerSelection, computerSelection) {
        computerScore++
        roundWinner = "computer"
        currentRound++}
-    updateRound()
     updateScoreMessage(roundWinner, playerSelection, computerSelection)
 
 }
@@ -50,11 +49,11 @@ function isGameOver () {
 const charmanderBTN = document.getElementById("charmanderBTN")
 const bulbasaurBTN = document.getElementById("bulbasaurBTN")
 const squirtleBTN = document.getElementById("squirtleBTN")
-const playerScoreInfo = document.getElementById("playerScore")
-const computerScoreInfo = document.getElementById("computerScore")
+const playerScoreInfo = document.getElementById("playerScoreInfo")
+const computerScoreInfo = document.getElementById("computerScoreInfo")
 const scoreMessage = document.getElementById("scoreMessage")
-const ScoreInfo = document.getElementById("scoreInfo")
-const roundCount = document.getElementById("round")
+const scoreInfo = document.getElementById("scoreInfo")
+const roundCount = document.getElementById("roundCount")
 
 charmanderBTN.addEventListener("click", () => handleClick("CHARMANDER"))
 bulbasaurBTN.addEventListener("click", () => handleClick("BULBASAUR"))
@@ -64,6 +63,7 @@ function handleClick (playerSelection) {
     const computerSelection = getRandomChoices ()
  
     playRound(playerSelection, computerSelection)
+    updateRound()
     updateScore()
     if (isGameOver) {
         openEndgameModal()
@@ -72,19 +72,19 @@ function handleClick (playerSelection) {
 }
 
 function updateRound () { 
-roundCount.textContent(`Round ${currentRound}`)}
+roundCount.textContent = `Round ${currentRound}`}
 
 function updateScore () {
-    playerScoreInfo.textContent(`Player: ${playerScore}`)
-    computerScoreInfo.textContent(`Opponent: ${computerScore}`)
+    playerScoreInfo.textContent = `Player: ${playerScore}`
+    computerScoreInfo.textContent =`Opponent: ${computerScore}`
     
     if (playerScore === computerScore) {
-    ScoreInfo.textContent("It's a tie!!")
+    scoreInfo.textContent = "It's a tie!!"
     }
     else if (roundWinner = "player") {
-        ScoreInfo.textContent("You won!!")
+        scoreInfo.textContent = "You won!!"
     }
     else if (roundWinner = "computer") {
-       ScoreInfo.textContent("You lost!!")
+       scoreInfo.textContent = "You lost!!"
     }
 }
