@@ -8,38 +8,36 @@ let currentRound = 1
 function playRound (playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {roundWinner = "tie"}
 
-    if ((playerSelection === "Charmander" && computerSelection === "Bulbasaur") ||
-     (playerSelection === "Bulbasaur" && computerSelection === "Squirtle") || 
-     (playerSelection === "Squirtle" && computerSelection === "Charmander")) {
+    if ((playerSelection === "CHARMANDER" && computerSelection === "BULBASSAUR") ||
+     (playerSelection === "BULBASAUR" && computerSelection === "SQUIRTLE") || 
+     (playerSelection === "SQUIRTLE" && computerSelection === "CHARMANDER")) {
         playerScore++
         roundWinner = "player"
         currentRound++
     } 
     
- if ((computerSelection === "Charmander" && playerSelection === "Bulbasaur") ||
- (computerSelection === "Bulbasaur" && playerSelection === "Squirtle") ||
- (computerSelection === "Squirtle" && playerSelection === "Charmander")) {
+ if ((computerSelection === "CHARMANDER" && playerSelection === "BULBASAUR") ||
+ (computerSelection === "BULBASAUR" && playerSelection === "SQUIRTLE") ||
+ (computerSelection === "SQUIRTLE" && playerSelection === "CHARMANDER")) {
        computerScore++
        roundWinner = "computer"
-       currentRound++
- }
-    
+       currentRound++}
     updateRound()
     updateScoreMessage(roundWinner, playerSelection, computerSelection)
-    
+
 }
 
 function getRandomChoices () { 
     let randomNumber = Math.floor(Math.random() * 3)
     switch(randomNumber) {
         case 0:
-            return "Charmander"
+            return "CHARMANDER"
         break
         case 1:
-            return "Bulbasaur"
+            return "BULBASAUR"
         break
         case 2:
-            return "Squirtle"
+            return "SQUIRTLE"
     }
 }
  
@@ -58,9 +56,9 @@ const scoreMessage = document.getElementById("scoreMessage")
 const ScoreInfo = document.getElementById("scoreInfo")
 const roundCount = document.getElementById("round")
 
-charmanderBTN.addEventListener("click", () => handleClick("Charmander"))
-bulbasaurBTN.addEventListener("click", () => handleClick("Bulbasaur"))
-squirtleBTN.addEventListener("click", () => handleClick("Squirtle"))
+charmanderBTN.addEventListener("click", () => handleClick("CHARMANDER"))
+bulbasaurBTN.addEventListener("click", () => handleClick("BULBASAUR"))
+squirtleBTN.addEventListener("click", () => handleClick("SQUIRTLE"))
 
 function handleClick (playerSelection) {
     const computerSelection = getRandomChoices ()
