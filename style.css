@@ -12,7 +12,7 @@ body {
     flex-direction: column;
     background-color:#003366;
     flex-basis: content;
-    flex: 1;
+    min-width: 500px;
 }
 .header {
     display: flex;
@@ -28,8 +28,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 50px;
-    flex-shrink: 1;
-    flex-basis: 160px;
+    flex-wrap: wrap;
 
 }
 
@@ -44,6 +43,9 @@ body {
 }
 img { width: 150px;
       height: auto;
+      min-width: none;
+      object-fit: scale-down;
+      
 }
 .infos {
     color: white
