@@ -1,7 +1,5 @@
 body {
     display: flex;
-    flex-shrink: 1;
-    flex-grow: 1;
     text-align: center;
     background-color: #003366;
     color: white;
@@ -13,6 +11,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color:#003366;
+    flex-basis: content;
     flex: 1;
 }
 .header {
@@ -29,6 +28,9 @@ body {
     align-items: center;
     justify-content: center;
     gap: 50px;
+    flex-shrink: 1;
+    flex-basis: 160px;
+
 }
 
 #charmanderBTN, #bulbasaurBTN, #squirtleBTN {
@@ -37,6 +39,7 @@ body {
     height: 250px;
     border: solid 5px;
     border-radius: 125px;
+    
     
 }
 img { width: 150px;
