@@ -1,7 +1,12 @@
 body {
+    display: flex;
+    flex-shrink: 1;
+    flex-grow: 1;
     text-align: center;
     background-color: #003366;
     color: white;
+    flex-direction: column;
+    row-gap: 100px;
 }
 
 .body {
@@ -16,6 +21,7 @@ body {
     align-items: center;
     background-color: #003366;
     color: white;
+    margin-top: 50px;
 }
 
 .buttons {
@@ -74,6 +80,6 @@ img { width: 150px;
     display: flex;
     justify-content: center;
     color: white;
-    align-items: baseline;
+    margin-top: 100px;
 
 }
