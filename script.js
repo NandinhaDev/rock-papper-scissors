@@ -6,19 +6,22 @@ let currentRound = 1
 //game
 
 function playRound (playerSelection, computerSelection) {
-    if (playerSelection === computerSelection) {roundWinner = "tie"}
+    if (playerSelection === computerSelection) {
+        roundWinner = "tie"
+        currentRound++
+    }
 
-    if ((playerSelection === "CHARMANDER" && computerSelection === "BULBASSAUR") ||
-     (playerSelection === "BULBASAUR" && computerSelection === "SQUIRTLE") || 
-     (playerSelection === "SQUIRTLE" && computerSelection === "CHARMANDER")) {
+    if ((playerSelection === "Charmander" && computerSelection === "Bulbasaur") ||
+     (playerSelection === "Bulbasaur" && computerSelection === "Squirtle") || 
+     (playerSelection === "Squirtle" && computerSelection === "Charmander")) {
         playerScore++
         roundWinner = "player"
         currentRound++
     } 
     
- if ((computerSelection === "CHARMANDER" && playerSelection === "BULBASAUR") ||
- (computerSelection === "BULBASAUR" && playerSelection === "SQUIRTLE") ||
- (computerSelection === "SQUIRTLE" && playerSelection === "CHARMANDER")) {
+ if ((computerSelection === "Charmander" && playerSelection === "Bulbasaur") ||
+ (computerSelection === "Bulbasaur" && playerSelection === "Squirtle") ||
+ (computerSelection === "Squirtle" && playerSelection === "Charmander")) {
        computerScore++
        roundWinner = "computer"
        currentRound++}
@@ -30,13 +33,13 @@ function getRandomChoices () {
     let randomNumber = Math.floor(Math.random() * 3)
     switch(randomNumber) {
         case 0:
-            return "CHARMANDER"
+            return "Charmander"
         break
         case 1:
-            return "BULBASAUR"
+            return "Bulbasaur"
         break
         case 2:
-            return "SQUIRTLE"
+            return "Squirtle"
     }
 }
  
@@ -54,10 +57,14 @@ const computerScoreInfo = document.getElementById("computerScoreInfo")
 const scoreMessage = document.getElementById("scoreMessage")
 const scoreInfo = document.getElementById("scoreInfo")
 const roundCount = document.getElementById("roundCount")
+const endGameModal = document.getElementById("endGameModal")
+const endGameMessage = document.getElementById("endGameMessage")
+const overlay = document.getElementById("overlay")
+const restartBTN = document.getElementById("restartBTN")
 
-charmanderBTN.addEventListener("click", () => handleClick("CHARMANDER"))
-bulbasaurBTN.addEventListener("click", () => handleClick("BULBASAUR"))
-squirtleBTN.addEventListener("click", () => handleClick("SQUIRTLE"))
+charmanderBTN.addEventListener("click", () => handleClick("Charmander"))
+bulbasaurBTN.addEventListener("click", () => handleClick("Bulbasaur"))
+squirtleBTN.addEventListener("click", () => handleClick("Squirtle"))
 
 function handleClick (playerSelection) {
     const computerSelection = getRandomChoices ()
@@ -78,13 +85,32 @@ function updateScore () {
     playerScoreInfo.textContent = `Player: ${playerScore}`
     computerScoreInfo.textContent =`Opponent: ${computerScore}`
     
-    if (playerScore === computerScore) {
+    if (roundWinner === "tie") {
     scoreInfo.textContent = "It's a tie!!"
     }
-    else if (roundWinner = "player") {
+    else if (roundWinner === "player") {
         scoreInfo.textContent = "You won!!"
     }
-    else if (roundWinner = "computer") {
+    else if (roundWinner === "computer") {
        scoreInfo.textContent = "You lost!!"
     }
 }
+function updateScoreMessage (roundWinner, playerSelection, computerSelection) {
+    if (roundWinner === "player") {
+        scoreMessage.textContent = `${playerSelection} beats ${computerSelection}`
+        return
+    }
+    if (roundWinner === "computer") {
+        scoreMessage.textContent = `${playerSelection} is beaten by ${computerSelection}`
+        return
+    }
+    scoreMessage.textContent = `${playerSelection}s do not attack eachother`
+
+}
+
+//function pokemonColor () {
+   // if ((playerSelection === "Charmander" && computerSelection === "Charmander") ||
+   // (playerSelection === "Charmander" || computerSelection === "Charmander")) {
+   // }
+//}
+
