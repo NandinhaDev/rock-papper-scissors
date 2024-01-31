@@ -12,11 +12,9 @@ body {
     display: flex;
     flex-direction: column;
     background-color:#003366;
-    border: solid 5px;
     flex: 1;
     flex-basis: 500px;
     align-items:stretch;
-    object-fit: scale-down;
 
 
 }
@@ -36,11 +34,10 @@ body {
     justify-content: space-between;
     flex-shrink: 1;
     flex-grow: 1;
-    border: solid 5px;
     object-fit: scale-down;
     flex-basis: 300px;
-    padding: 0px 10%;
-    gap: 10%;
+    padding: 0px 5%;
+    gap: 3%;
 }
 
 #charmanderBTN, #bulbasaurBTN, #squirtleBTN {
@@ -71,7 +68,6 @@ img { width:100%;
       }
 .Infos {
     color: white;
-    border: solid 5px;
     flex-grow: 1;
     font-size: 100%;
 }
@@ -79,7 +75,6 @@ img { width:100%;
 #scoreDisplay {
     display: flex;
     color: white;
-    border: solid 5px;
     flex-grow: 1;
     gap: 50%;
     font-size:medium;

@@ -104,7 +104,7 @@ function updateScoreMessage (roundWinner, playerSelection, computerSelection) {
         scoreMessage.textContent = `${playerSelection} is beaten by ${computerSelection}`
         return
     }
-    scoreMessage.textContent = `${playerSelection}s do not attack eachother`
+    scoreMessage.textContent = `${playerSelection}s do not attack each other`
 
 }
 
@@ -114,3 +114,6 @@ function updateScoreMessage (roundWinner, playerSelection, computerSelection) {
    // }
 //}
 
+function openEndgameModal() {
+    
+}
