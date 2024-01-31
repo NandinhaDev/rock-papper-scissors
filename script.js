@@ -118,7 +118,7 @@ function updateScoreMessage (roundWinner, playerSelection, computerSelection) {
     scoreMessage.textContent = `${playerSelection}s do not attack each other`
     return
     }
-    scoreMessage.textContent = ""
+    scoreMessage.textContent = "Best of 5!!"
 }
 
 
