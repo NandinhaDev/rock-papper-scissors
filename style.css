@@ -95,16 +95,28 @@ img { width:100%;
 
 .endGameModal {
 
+    display: flex;
+    flex-shrink: 1;
+    flex-direction: column;
     position: fixed;
+    width: 50%;
+    max-width: 300px;  
     z-index: 1;
-    width: 300px;
-    background-color: cadetblue;
+    background-color: #061e35;
     border-radius: 10px;
     text-align: center;
     padding: 30px;
-    user-select: none;
-    top: 50%;
     left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    align-items: center;
+    row-gap: 30%;
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    transition: 200ms ease-in-out;
+
+
 
 }
 .footer {
@@ -113,6 +125,31 @@ img { width:100%;
     color: white;
     margin-top: 100px;
     background-color: hsl(209, 68%, 16%);
-    align-self: stretch;
+}
 
+.restartBTN {
+    width: 150px;
+    background-color: deepskyblue;
+    height: 50px;
+    border: solid black 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    
+}
+.overlay {
+    display: none;
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.7;
+}
+.endGameModal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+.overlay.active {
+    display: block;
 }

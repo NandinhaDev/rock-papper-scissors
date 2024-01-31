@@ -25,8 +25,6 @@ function playRound (playerSelection, computerSelection) {
        computerScore++
        roundWinner = "computer"
        currentRound++}
-    updateScoreMessage(roundWinner, playerSelection, computerSelection)
-
 }
 
 function getRandomChoices () { 
@@ -40,13 +38,15 @@ function getRandomChoices () {
         break
         case 2:
             return "Squirtle"
+        break
     }
 }
  
 function isGameOver () {
-    return playerScore === 5 ||
-           computerScore === 5
-}
+   if (playerScore === 5 || computerScore === 5) {
+    return true
+   }
+} 
 //UI
 
 const charmanderBTN = document.getElementById("charmanderBTN")
@@ -65,14 +65,22 @@ const restartBTN = document.getElementById("restartBTN")
 charmanderBTN.addEventListener("click", () => handleClick("Charmander"))
 bulbasaurBTN.addEventListener("click", () => handleClick("Bulbasaur"))
 squirtleBTN.addEventListener("click", () => handleClick("Squirtle"))
+restartBTN.addEventListener("click", restartGame())
+overlay.addEventListener("click", closeEndGameModal())
 
 function handleClick (playerSelection) {
+    if (isGameOver()) { 
+        openEndgameModal()
+        return
+    }
+
     const computerSelection = getRandomChoices ()
  
     playRound(playerSelection, computerSelection)
     updateRound()
     updateScore()
-    if (isGameOver) {
+    updateScoreMessage(roundWinner, playerSelection, computerSelection)
+    if (isGameOver()) {
         openEndgameModal()
         setFinalMessage ()
     }
@@ -115,5 +123,27 @@ function updateScoreMessage (roundWinner, playerSelection, computerSelection) {
 //}
 
 function openEndgameModal() {
+    endGameModal.classList.add("active")
+    overlay.classList.add("active")}
+
+function closeEndGameModal() {
+    endGameModal.classList.remove("active")
+    overlay.classList.remove("active")
+}
+
+function restartGame () {
+    let playerScore = 0
+    let computerScore = 0
+    let roundWinner = ''
+    let currentRound = 1
+    closeEndGameModal()
     
+     
+}
+
+function setFinalMessage () {
+    return playerScore > computerScore
+    ? (endGameMessage.textContent = 'You won!!')
+    : (endGameMessage.textContent = 'You lost..')
+       
 }
