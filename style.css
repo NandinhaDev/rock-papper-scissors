@@ -101,6 +101,7 @@ img { width:100%;
     position: fixed;
     width: 50%;
     max-width: 300px;  
+    user-select: none;
     z-index: 1;
     background-color: #061e35;
     border-radius: 10px;

@@ -65,8 +65,8 @@ const restartBTN = document.getElementById("restartBTN")
 charmanderBTN.addEventListener("click", () => handleClick("Charmander"))
 bulbasaurBTN.addEventListener("click", () => handleClick("Bulbasaur"))
 squirtleBTN.addEventListener("click", () => handleClick("Squirtle"))
-restartBTN.addEventListener("click", restartGame())
-overlay.addEventListener("click", closeEndGameModal())
+restartBTN.addEventListener("click", restartGame)
+overlay.addEventListener("click", closeEndGameModal)
 
 function handleClick (playerSelection) {
     if (isGameOver()) { 
@@ -102,6 +102,8 @@ function updateScore () {
     else if (roundWinner === "computer") {
        scoreInfo.textContent = "You lost!!"
     }
+    else if(roundWinner === "")
+    scoreInfo.textContent = ""
 }
 function updateScoreMessage (roundWinner, playerSelection, computerSelection) {
     if (roundWinner === "player") {
@@ -112,9 +114,13 @@ function updateScoreMessage (roundWinner, playerSelection, computerSelection) {
         scoreMessage.textContent = `${playerSelection} is beaten by ${computerSelection}`
         return
     }
+    if (roundWinner === "tie") {
     scoreMessage.textContent = `${playerSelection}s do not attack each other`
-
+    return
+    }
+    scoreMessage.textContent = ""
 }
+
 
 //function pokemonColor () {
    // if ((playerSelection === "Charmander" && computerSelection === "Charmander") ||
@@ -132,13 +138,14 @@ function closeEndGameModal() {
 }
 
 function restartGame () {
-    let playerScore = 0
-    let computerScore = 0
-    let roundWinner = ''
-    let currentRound = 1
+     playerScore = 0
+     computerScore = 0
+     roundWinner = ''
+     currentRound = 1
     closeEndGameModal()
-    
-     
+    updateRound()
+    updateScore()
+    updateScoreMessage()   
 }
 
 function setFinalMessage () {
