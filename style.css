@@ -17,6 +17,7 @@ body {
     flex-basis: 500px;
     align-items: center;
     object-fit: scale-down;
+
 }
 .header {
     display: flex;
@@ -33,9 +34,9 @@ body {
     align-items: center;
     justify-content: space-between;
     flex-shrink: 1;
+    flex-grow: 1;
     border: solid 5px;
     flex-basis: 300px;
-    padding: 90px;
     object-fit: scale-down;
     margin: 20px;
 
@@ -43,25 +44,23 @@ body {
 
 #charmanderBTN, #bulbasaurBTN, #squirtleBTN {
     background-color: deepskyblue;
-    width: 200px;
-    height: 200px;
+    width: 200%;
+    aspect-ratio: 1/1;
     border: solid 5px;
-    border-radius: 100px;
+    border-radius: 50%;
     object-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 1;
     padding: 0px 30px;
-    object-fit: scale-down;
     margin: 20px;
     
 }
-img { width: 100px;
+img { width:50%;
       height: auto;
       object-fit: scale-down;
       display: flex;
-      flex-grow: 0;
+      flex-grow: 1;
       flex-shrink: 1;
       }
 .Infos {
@@ -71,10 +70,10 @@ img { width: 100px;
 
 #scoreDisplay {
     display: flex;
-    gap: 300px;
-    justify-content: center;
     color: white;
     border: solid 5px;
+    flex-grow: 1;
+    gap: 300px;
 }
 
 
