@@ -4,7 +4,7 @@ body {
     background-color: #003366;
     color: white;
     flex-direction: column;
-    object-fit:scale-down ;
+    row-gap: 100px;
 
 }
 
@@ -15,8 +15,9 @@ body {
     border: solid 5px;
     flex: 1;
     flex-basis: 500px;
-    align-items: center;
+    align-items:stretch;
     object-fit: scale-down;
+
 
 }
 .header {
@@ -26,7 +27,7 @@ body {
     background-color: #003366;
     color: white;
     margin-top: 50px;
-    font-size: 24px;
+    font-size: 100%
 }
 
 .buttons {
@@ -36,36 +37,43 @@ body {
     flex-shrink: 1;
     flex-grow: 1;
     border: solid 5px;
-    flex-basis: 300px;
     object-fit: scale-down;
-    margin: 20px;
-
+    flex-basis: 300px;
+    padding: 0px 10%;
+    gap: 10%;
 }
 
 #charmanderBTN, #bulbasaurBTN, #squirtleBTN {
     background-color: deepskyblue;
-    width: 200%;
-    aspect-ratio: 1/1;
+    width: 100%;
     border: solid 5px;
     border-radius: 50%;
     object-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0px 30px;
-    margin: 20px;
+    aspect-ratio: 1/1;
+    object-fit: scale-down;
+    max-width: 500px;
+    min-width: 80px;
+    
     
 }
-img { width:50%;
+img { width:100%;
       height: auto;
-      object-fit: scale-down;
       display: flex;
       flex-grow: 1;
-      flex-shrink: 1;
+      min-width: 60px;
+      object-fit: scale-down;
+      aspect-ratio: 1/1;
+      max-width: 300px;
+      margin: 10%;
       }
 .Infos {
     color: white;
     border: solid 5px;
+    flex-grow: 1;
+    font-size: 100%;
 }
 
 #scoreDisplay {
@@ -73,7 +81,10 @@ img { width:50%;
     color: white;
     border: solid 5px;
     flex-grow: 1;
-    gap: 300px;
+    gap: 50%;
+    font-size:medium;
+    justify-content: center;
+    
 }
 
 
@@ -83,6 +94,8 @@ img { width:50%;
     margin-bottom: 50px;
     justify-content: center;
     align-items: center;
+    flex-grow: 1;
+    font-size: 200%;
 }
 
 .endGameModal {
@@ -105,5 +118,6 @@ img { width:50%;
     color: white;
     margin-top: 100px;
     background-color: hsl(209, 68%, 16%);
+    align-self: stretch;
 
 }
