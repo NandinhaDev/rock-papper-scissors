@@ -4,7 +4,7 @@ body {
     background-color: #003366;
     color: white;
     flex-direction: column;
-    row-gap: 80px;
+    object-fit:scale-down ;
 
 }
 
@@ -14,8 +14,9 @@ body {
     background-color:#003366;
     border: solid 5px;
     flex: 1;
-    flex-basis: 600px;
+    flex-basis: 500px;
     align-items: center;
+    object-fit: scale-down;
 }
 .header {
     display: flex;
@@ -24,15 +25,20 @@ body {
     background-color: #003366;
     color: white;
     margin-top: 50px;
+    font-size: 24px;
 }
 
 .buttons {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 50px;
-    flex-grow: 1;
+    justify-content: space-between;
+    flex-shrink: 1;
     border: solid 5px;
+    flex-basis: 300px;
+    padding: 90px;
+    object-fit: scale-down;
+    margin: 20px;
+
 }
 
 #charmanderBTN, #bulbasaurBTN, #squirtleBTN {
@@ -41,10 +47,22 @@ body {
     height: 200px;
     border: solid 5px;
     border-radius: 100px;
+    object-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 1;
+    padding: 0px 30px;
+    object-fit: scale-down;
+    margin: 20px;
+    
 }
 img { width: 100px;
       height: auto;
       object-fit: scale-down;
+      display: flex;
+      flex-grow: 0;
+      flex-shrink: 1;
       }
 .Infos {
     color: white;
