@@ -154,3 +154,6 @@ img { width:100%;
 .overlay.active {
     display: block;
 }
+.scoreInfo {
+    font-weight: bold;
+}

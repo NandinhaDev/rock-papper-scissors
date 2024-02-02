@@ -102,8 +102,8 @@ function updateScore () {
     else if (roundWinner === "computer") {
        scoreInfo.textContent = "You lost!!"
     }
-    else if(roundWinner === "")
-    scoreInfo.textContent = ""
+    else if(roundWinner === ""){
+    scoreInfo.textContent = ""}
 }
 function updateScoreMessage (roundWinner, playerSelection, computerSelection) {
     if (roundWinner === "player") {
@@ -119,24 +119,7 @@ function updateScoreMessage (roundWinner, playerSelection, computerSelection) {
         return
     }
     scoreMessage.textContent = "Best of 5!!"
-    colorizePokemon(playerSelection,computerSelection)
 }
-
-function colorizePokemon (playerSelection, computerSelection) {
-    if (playerSelection === "Charmander" || computerSelection === "Charmander"){
-        scoreMessage.innerHTML = scoreMessage.innerHTML.replace(/Charmander(s)?/g, 
-         <span style="color:#ff694d">$&</span>)
-        }
-    if (playerSelection === "Bulbasaur" || computerSelection === "Bulbasaur") {
-        scoreMessage.innerHTML = scoreMessage.innerHTML.replace(/Bulbasaur(s)?/g, <span style="color:#00ff76">$&</span>)
-    }
-    if (playerSelection === "Squirtle" || computerSelection === "Squirtle"){
-        scoreMessage.innerHTML =
-        scoreMessage.innerHTML.replace(/Squirtle(s)?/g, <span style="color: #00d5ff">$&</span> )
-    }
-}
-
-
 
 function openEndgameModal() {
     endGameModal.classList.add("active")
