@@ -109,24 +109,34 @@ function updateScoreMessage (roundWinner, playerSelection, computerSelection) {
     if (roundWinner === "player") {
         scoreMessage.textContent = `${playerSelection} beats ${computerSelection}`
         return
-    }
+    }   
     if (roundWinner === "computer") {
         scoreMessage.textContent = `${playerSelection} is beaten by ${computerSelection}`
         return
     }
     if (roundWinner === "tie") {
-    scoreMessage.textContent = `${playerSelection}s do not attack each other`
-    return
+        scoreMessage.textContent = `${playerSelection}s do not attack each other`
+        return
     }
     scoreMessage.textContent = "Best of 5!!"
+    colorizePokemon(playerSelection,computerSelection)
+}
+
+function colorizePokemon (playerSelection, computerSelection) {
+    if (playerSelection === "Charmander" || computerSelection === "Charmander"){
+        scoreMessage.innerHTML = scoreMessage.innerHTML.replace(/Charmander(s)?/g, 
+         <span style="color:#ff694d">$&</span>)
+        }
+    if (playerSelection === "Bulbasaur" || computerSelection === "Bulbasaur") {
+        scoreMessage.innerHTML = scoreMessage.innerHTML.replace(/Bulbasaur(s)?/g, <span style="color:#00ff76">$&</span>)
+    }
+    if (playerSelection === "Squirtle" || computerSelection === "Squirtle"){
+        scoreMessage.innerHTML =
+        scoreMessage.innerHTML.replace(/Squirtle(s)?/g, <span style="color: #00d5ff">$&</span> )
+    }
 }
 
 
-//function pokemonColor () {
-   // if ((playerSelection === "Charmander" && computerSelection === "Charmander") ||
-   // (playerSelection === "Charmander" || computerSelection === "Charmander")) {
-   // }
-//}
 
 function openEndgameModal() {
     endGameModal.classList.add("active")
